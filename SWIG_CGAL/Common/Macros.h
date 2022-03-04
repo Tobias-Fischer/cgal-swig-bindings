@@ -141,7 +141,7 @@ struct SWIG_CGAL_Extract_data<T,false>
 template <class T>
 struct SWIG_CGAL_Extract_data<T,true>
 {
-  typedef typename boost::remove_cv< typename boost::remove_reference<T>::type >::type I;
+  typedef typename std::remove_cv< typename std::remove_reference<T>::type >::type I;
   typedef typename std::iterator_traits<I>::reference reference;
   reference operator()(I t){return *t;}
 };
